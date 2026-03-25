@@ -1,0 +1,962 @@
+[
+  {
+    "id": "day-1",
+    "title": "Day 1 - Striver Arrays Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-2",
+    "title": "Day 2 - Striver Arrays Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-3",
+    "title": "Day 3 - Striver Arrays Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-4",
+    "title": "Day 4 - Striver Arrays Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-5",
+    "title": "Day 5 - Striver Binary Search Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-6",
+    "title": "Day 6 - Striver Binary Search Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-7",
+    "title": "Day 7 - Striver Binary Search Topic",
+    "notes": "Month 1\nWeek 1\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-1",
+    "title": "Week 1 - Weekly Exam",
+    "notes": "Month 1\nWeek 1\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-8",
+    "title": "Day 8 - Striver Binary Search Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-9",
+    "title": "Day 9 - Striver Binary Search Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-10",
+    "title": "Day 10 - Striver Strings Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-11",
+    "title": "Day 11 - Striver Strings Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-12",
+    "title": "Day 12 - Striver Strings Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-13",
+    "title": "Day 13 - Striver Strings Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-14",
+    "title": "Day 14 - Striver Strings Topic",
+    "notes": "Month 1\nWeek 2\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-2",
+    "title": "Week 2 - Weekly Exam",
+    "notes": "Month 1\nWeek 2\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-15",
+    "title": "Day 15 - Striver Linked List Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-16",
+    "title": "Day 16 - Striver Linked List Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-17",
+    "title": "Day 17 - Striver Linked List Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-18",
+    "title": "Day 18 - Striver Linked List Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-19",
+    "title": "Day 19 - Striver Linked List Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-20",
+    "title": "Day 20 - Striver Stack & Queue Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-21",
+    "title": "Day 21 - Striver Stack & Queue Topic",
+    "notes": "Month 1\nWeek 3\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-3",
+    "title": "Week 3 - Weekly Exam",
+    "notes": "Month 1\nWeek 3\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-22",
+    "title": "Day 22 - Striver Stack & Queue Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-23",
+    "title": "Day 23 - Striver Stack & Queue Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-24",
+    "title": "Day 24 - Striver Stack & Queue Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-25",
+    "title": "Day 25 - Striver Tree Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-26",
+    "title": "Day 26 - Striver Tree Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-27",
+    "title": "Day 27 - Striver Tree Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-28",
+    "title": "Day 28 - Striver Tree Topic",
+    "notes": "Month 1\nWeek 4\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-4",
+    "title": "Week 4 - Weekly Exam",
+    "notes": "Month 1\nWeek 4\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-29",
+    "title": "Day 29 - Striver Tree Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-30",
+    "title": "Day 30 - Striver Graph Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-31",
+    "title": "Day 31 - Striver Graph Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-32",
+    "title": "Day 32 - Striver Graph Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-33",
+    "title": "Day 33 - Striver Graph Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-34",
+    "title": "Day 34 - Striver Graph Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-35",
+    "title": "Day 35 - Striver Dynamic Programming Topic",
+    "notes": "Month 2\nWeek 5\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-5",
+    "title": "Week 5 - Weekly Exam",
+    "notes": "Month 2\nWeek 5\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-36",
+    "title": "Day 36 - Striver Dynamic Programming Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-37",
+    "title": "Day 37 - Striver Dynamic Programming Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-38",
+    "title": "Day 38 - Striver Dynamic Programming Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-39",
+    "title": "Day 39 - Striver Dynamic Programming Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-40",
+    "title": "Day 40 - Striver Arrays Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-41",
+    "title": "Day 41 - Striver Arrays Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-42",
+    "title": "Day 42 - Striver Arrays Topic",
+    "notes": "Month 2\nWeek 6\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-6",
+    "title": "Week 6 - Weekly Exam",
+    "notes": "Month 2\nWeek 6\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-43",
+    "title": "Day 43 - Striver Arrays Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-44",
+    "title": "Day 44 - Striver Arrays Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-45",
+    "title": "Day 45 - Striver Binary Search Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-46",
+    "title": "Day 46 - Striver Binary Search Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-47",
+    "title": "Day 47 - Striver Binary Search Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-48",
+    "title": "Day 48 - Striver Binary Search Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-49",
+    "title": "Day 49 - Striver Binary Search Topic",
+    "notes": "Month 2\nWeek 7\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-7",
+    "title": "Week 7 - Weekly Exam",
+    "notes": "Month 2\nWeek 7\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-50",
+    "title": "Day 50 - Striver Strings Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-51",
+    "title": "Day 51 - Striver Strings Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-52",
+    "title": "Day 52 - Striver Strings Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-53",
+    "title": "Day 53 - Striver Strings Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-54",
+    "title": "Day 54 - Striver Strings Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-55",
+    "title": "Day 55 - Striver Linked List Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-56",
+    "title": "Day 56 - Striver Linked List Topic",
+    "notes": "Month 2\nWeek 8\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-8",
+    "title": "Week 8 - Weekly Exam",
+    "notes": "Month 2\nWeek 8\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-57",
+    "title": "Day 57 - Striver Linked List Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-58",
+    "title": "Day 58 - Striver Linked List Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-59",
+    "title": "Day 59 - Striver Linked List Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-60",
+    "title": "Day 60 - Striver Stack & Queue Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-61",
+    "title": "Day 61 - Striver Stack & Queue Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-62",
+    "title": "Day 62 - Striver Stack & Queue Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-63",
+    "title": "Day 63 - Striver Stack & Queue Topic",
+    "notes": "Month 3\nWeek 9\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-9",
+    "title": "Week 9 - Weekly Exam",
+    "notes": "Month 3\nWeek 9\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-64",
+    "title": "Day 64 - Striver Stack & Queue Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-65",
+    "title": "Day 65 - Striver Tree Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-66",
+    "title": "Day 66 - Striver Tree Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-67",
+    "title": "Day 67 - Striver Tree Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-68",
+    "title": "Day 68 - Striver Tree Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-69",
+    "title": "Day 69 - Striver Tree Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-70",
+    "title": "Day 70 - Striver Graph Topic",
+    "notes": "Month 3\nWeek 10\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-10",
+    "title": "Week 10 - Weekly Exam",
+    "notes": "Month 3\nWeek 10\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-71",
+    "title": "Day 71 - Striver Graph Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-72",
+    "title": "Day 72 - Striver Graph Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-73",
+    "title": "Day 73 - Striver Graph Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-74",
+    "title": "Day 74 - Striver Graph Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-75",
+    "title": "Day 75 - Striver Dynamic Programming Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-76",
+    "title": "Day 76 - Striver Dynamic Programming Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-77",
+    "title": "Day 77 - Striver Dynamic Programming Topic",
+    "notes": "Month 3\nWeek 11\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-11",
+    "title": "Week 11 - Weekly Exam",
+    "notes": "Month 3\nWeek 11\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-78",
+    "title": "Day 78 - Striver Dynamic Programming Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-79",
+    "title": "Day 79 - Striver Dynamic Programming Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-80",
+    "title": "Day 80 - Striver Arrays Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-81",
+    "title": "Day 81 - Striver Arrays Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-82",
+    "title": "Day 82 - Striver Arrays Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-83",
+    "title": "Day 83 - Striver Arrays Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-84",
+    "title": "Day 84 - Striver Arrays Topic",
+    "notes": "Month 3\nWeek 12\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-12",
+    "title": "Week 12 - Weekly Exam",
+    "notes": "Month 3\nWeek 12\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-85",
+    "title": "Day 85 - Striver Binary Search Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-86",
+    "title": "Day 86 - Striver Binary Search Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-87",
+    "title": "Day 87 - Striver Binary Search Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-88",
+    "title": "Day 88 - Striver Binary Search Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-89",
+    "title": "Day 89 - Striver Binary Search Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-90",
+    "title": "Day 90 - Striver Strings Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-91",
+    "title": "Day 91 - Striver Strings Topic",
+    "notes": "Month 4\nWeek 13\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-13",
+    "title": "Week 13 - Weekly Exam",
+    "notes": "Month 4\nWeek 13\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-92",
+    "title": "Day 92 - Striver Strings Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-93",
+    "title": "Day 93 - Striver Strings Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-94",
+    "title": "Day 94 - Striver Strings Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-95",
+    "title": "Day 95 - Striver Linked List Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-96",
+    "title": "Day 96 - Striver Linked List Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-97",
+    "title": "Day 97 - Striver Linked List Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-98",
+    "title": "Day 98 - Striver Linked List Topic",
+    "notes": "Month 4\nWeek 14\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-14",
+    "title": "Week 14 - Weekly Exam",
+    "notes": "Month 4\nWeek 14\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-99",
+    "title": "Day 99 - Striver Linked List Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-100",
+    "title": "Day 100 - Striver Stack & Queue Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-101",
+    "title": "Day 101 - Striver Stack & Queue Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-102",
+    "title": "Day 102 - Striver Stack & Queue Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-103",
+    "title": "Day 103 - Striver Stack & Queue Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-104",
+    "title": "Day 104 - Striver Stack & Queue Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-105",
+    "title": "Day 105 - Striver Tree Topic",
+    "notes": "Month 4\nWeek 15\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-15",
+    "title": "Week 15 - Weekly Exam",
+    "notes": "Month 4\nWeek 15\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-106",
+    "title": "Day 106 - Striver Tree Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-107",
+    "title": "Day 107 - Striver Tree Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-108",
+    "title": "Day 108 - Striver Tree Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-109",
+    "title": "Day 109 - Striver Tree Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Tree Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-110",
+    "title": "Day 110 - Striver Graph Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-111",
+    "title": "Day 111 - Striver Graph Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-112",
+    "title": "Day 112 - Striver Graph Topic",
+    "notes": "Month 4\nWeek 16\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-16",
+    "title": "Week 16 - Weekly Exam",
+    "notes": "Month 4\nWeek 16\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-113",
+    "title": "Day 113 - Striver Graph Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-114",
+    "title": "Day 114 - Striver Graph Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Graph Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-115",
+    "title": "Day 115 - Striver Dynamic Programming Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-116",
+    "title": "Day 116 - Striver Dynamic Programming Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-117",
+    "title": "Day 117 - Striver Dynamic Programming Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-118",
+    "title": "Day 118 - Striver Dynamic Programming Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-119",
+    "title": "Day 119 - Striver Dynamic Programming Topic",
+    "notes": "Month 5\nWeek 17\nVideo: Striver Dynamic Programming Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-17",
+    "title": "Week 17 - Weekly Exam",
+    "notes": "Month 5\nWeek 17\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-120",
+    "title": "Day 120 - Striver Arrays Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-121",
+    "title": "Day 121 - Striver Arrays Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-122",
+    "title": "Day 122 - Striver Arrays Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-123",
+    "title": "Day 123 - Striver Arrays Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-124",
+    "title": "Day 124 - Striver Arrays Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Arrays Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-125",
+    "title": "Day 125 - Striver Binary Search Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-126",
+    "title": "Day 126 - Striver Binary Search Topic",
+    "notes": "Month 5\nWeek 18\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-18",
+    "title": "Week 18 - Weekly Exam",
+    "notes": "Month 5\nWeek 18\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-127",
+    "title": "Day 127 - Striver Binary Search Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-128",
+    "title": "Day 128 - Striver Binary Search Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-129",
+    "title": "Day 129 - Striver Binary Search Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Binary Search Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-130",
+    "title": "Day 130 - Striver Strings Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-131",
+    "title": "Day 131 - Striver Strings Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-132",
+    "title": "Day 132 - Striver Strings Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-133",
+    "title": "Day 133 - Striver Strings Topic",
+    "notes": "Month 5\nWeek 19\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-19",
+    "title": "Week 19 - Weekly Exam",
+    "notes": "Month 5\nWeek 19\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  },
+  {
+    "id": "day-134",
+    "title": "Day 134 - Striver Strings Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Strings Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-135",
+    "title": "Day 135 - Striver Linked List Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-136",
+    "title": "Day 136 - Striver Linked List Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-137",
+    "title": "Day 137 - Striver Linked List Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-138",
+    "title": "Day 138 - Striver Linked List Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-139",
+    "title": "Day 139 - Striver Linked List Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Linked List Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "day-140",
+    "title": "Day 140 - Striver Stack & Queue Topic",
+    "notes": "Month 5\nWeek 20\nVideo: Striver Stack & Queue Topic\nSolve: 2 LeetCode Problems (1 Easy, 1 Medium)\nRevision: Previous problems",
+    "done": false
+  },
+  {
+    "id": "exam-20",
+    "title": "Week 20 - Weekly Exam",
+    "notes": "Month 5\nWeek 20\nWeekly Exam: 3 problems (timed)",
+    "done": false
+  }
+]
