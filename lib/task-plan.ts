@@ -35,7 +35,7 @@ export type MonthGroup = {
   weeks: WeekGroup[];
 };
 
-export const STORAGE_KEY = "task-flow-board-dsa-plan-v4";
+export const STORAGE_KEY = "task-flow-board-dsa-plan-v5";
 export const INSERT_AT_END = "__insert_at_end__";
 
 const listeners = new Set<() => void>();
@@ -109,6 +109,12 @@ const subscribeToTasks = (listener: () => void) => {
     window.removeEventListener("storage", onStorage);
   };
 };
+
+const sanitizeDetailLines = (details: string) =>
+  details
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
 
 export const toGroupedTask = (task: Task): GroupedTask => {
   const [month = "Month", week = "Week", ...details] = task.notes
@@ -294,11 +300,42 @@ export function useTaskPlan() {
     });
   };
 
+  const updateTask = (params: {
+    details: string;
+    taskId: string;
+    title: string;
+  }) => {
+    const { details, taskId, title } = params;
+
+    writeStoredTasks((currentTasks) =>
+      renumberDayTasks(
+        currentTasks.map((task) => {
+          if (task.id !== taskId) {
+            return task;
+          }
+
+          const groupedTask = toGroupedTask(task);
+
+          return {
+            ...task,
+            notes: buildNotes(
+              groupedTask.month,
+              groupedTask.week,
+              sanitizeDetailLines(details)
+            ),
+            title
+          };
+        })
+      )
+    );
+  };
+
   return {
     groupedPlan,
     groupedTasks,
     insertTask,
     tasks,
-    toggleTask
+    toggleTask,
+    updateTask
   };
 }
