@@ -3,7 +3,7 @@
 import { getCompletionPercent, useTaskPlan } from "@/lib/task-plan";
 
 export function MonthProgressBoard() {
-  const { groupedPlan } = useTaskPlan();
+  const { error, groupedPlan, isLoading } = useTaskPlan();
   const sortedMonths = [...groupedPlan].sort(
     (a, b) => getCompletionPercent(b.completed, b.total) - getCompletionPercent(a.completed, a.total)
   );
@@ -12,16 +12,23 @@ export function MonthProgressBoard() {
 
   return (
     <section className="space-y-5">
+      {error ? (
+        <article className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+          Server error: {error}
+        </article>
+      ) : null}
       <div className="grid gap-4 lg:grid-cols-[0.4fr_0.6fr]">
         <div className="grid gap-4">
           <article className="rounded-[1.7rem] border border-emerald-300/20 bg-emerald-300/10 p-5 backdrop-blur-xl">
             <p className="text-sm text-slate-200">Fastest month</p>
             <h2 className="mt-2 text-2xl font-semibold text-white">{fastestMonth?.title}</h2>
             <p className="mt-2 text-sm text-slate-300">
-              {fastestMonth?.completed}/{fastestMonth?.total} done • {getCompletionPercent(
-                fastestMonth?.completed ?? 0,
-                fastestMonth?.total ?? 0
-              )}% complete
+              {isLoading
+                ? "Syncing progress from server..."
+                : `${fastestMonth?.completed}/${fastestMonth?.total} done • ${getCompletionPercent(
+                    fastestMonth?.completed ?? 0,
+                    fastestMonth?.total ?? 0
+                  )}% complete`}
             </p>
           </article>
           <article className="rounded-[1.7rem] border border-amber-300/20 bg-amber-300/10 p-5 backdrop-blur-xl">

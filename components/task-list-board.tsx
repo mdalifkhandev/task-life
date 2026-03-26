@@ -9,7 +9,15 @@ import {
 import { useMemo, useState } from "react";
 
 export function TaskListBoard() {
-  const { groupedPlan, groupedTasks, insertTask, toggleTask, updateTask } = useTaskPlan();
+  const {
+    error,
+    groupedPlan,
+    groupedTasks,
+    insertTask,
+    isLoading,
+    toggleTask,
+    updateTask
+  } = useTaskPlan();
   const [expandedMonths, setExpandedMonths] = useState<Set<string>>(
     () => new Set(["Month 1"])
   );
@@ -184,6 +192,11 @@ export function TaskListBoard() {
   return (
     <section className="grid gap-5 xl:grid-cols-[0.34fr_0.66fr]">
       <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
+        {error ? (
+          <section className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+            Server error: {error}
+          </section>
+        ) : null}
         <section className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.92),rgba(30,41,59,0.82))] p-6 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl">
           <div className="space-y-5">
             <span
@@ -210,7 +223,9 @@ export function TaskListBoard() {
                 {completedDays}/{totalDays}
               </p>
               <p className="mt-2 text-sm text-slate-300">
-                {getCompletionPercent(completedDays, totalDays)}% day completion
+                {isLoading
+                  ? "Syncing from server..."
+                  : `${getCompletionPercent(completedDays, totalDays)}% day completion`}
               </p>
             </article>
             <article className="rounded-3xl border border-cyan-300/15 bg-cyan-300/8 p-4">

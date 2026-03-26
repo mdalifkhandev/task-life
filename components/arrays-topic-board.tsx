@@ -3,13 +3,18 @@
 import { getCompletionPercent, useTaskPlan } from "@/lib/task-plan";
 
 export function ArraysTopicBoard() {
-  const { groupedTasks, toggleTask } = useTaskPlan();
+  const { error, groupedTasks, isLoading, toggleTask } = useTaskPlan();
   const arraysTasks = groupedTasks.filter((task) => task.topic === "Striver Arrays Topic");
   const completedCount = arraysTasks.filter((task) => task.done).length;
   const months = Array.from(new Set(arraysTasks.map((task) => task.month)));
 
   return (
     <section className="space-y-5">
+      {error ? (
+        <article className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+          Server error: {error}
+        </article>
+      ) : null}
       <div className="grid gap-4 lg:grid-cols-[0.3fr_0.7fr]">
         <aside className="space-y-4">
           <article className="rounded-[1.6rem] border border-cyan-300/20 bg-cyan-300/10 p-5 backdrop-blur-xl">
@@ -18,7 +23,9 @@ export function ArraysTopicBoard() {
               {getCompletionPercent(completedCount, arraysTasks.length)}%
             </p>
             <p className="mt-2 text-sm text-slate-300">
-              {completedCount}/{arraysTasks.length} arrays tasks done
+              {isLoading
+                ? "Syncing arrays lane..."
+                : `${completedCount}/${arraysTasks.length} arrays tasks done`}
             </p>
           </article>
           <article className="rounded-[1.6rem] border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
