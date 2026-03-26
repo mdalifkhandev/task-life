@@ -1,3 +1,4 @@
+import { requireAuthenticatedApiUser } from "@/lib/server/auth-service";
 import { updateTaskSchema } from "@/lib/server/task-schemas";
 import { updateTaskInDatabase } from "@/lib/server/task-service";
 import { ZodError } from "zod";
@@ -9,6 +10,7 @@ export async function PATCH(
   context: { params: Promise<{ taskId: string }> }
 ) {
   try {
+    await requireAuthenticatedApiUser();
     const { taskId } = await context.params;
     const payload = updateTaskSchema.parse(await request.json());
     const tasks = await updateTaskInDatabase({
@@ -27,6 +29,9 @@ export async function PATCH(
 
     const message =
       error instanceof Error ? error.message : "Failed to update task";
-    return Response.json({ error: message }, { status: 500 });
+    return Response.json(
+      { error: message },
+      { status: message === "Unauthorized" ? 401 : 500 }
+    );
   }
 }

@@ -1,6 +1,9 @@
 import { TaskListBoard } from "@/components/task-list-board";
+import { requireAuthenticatedPageUser } from "@/lib/server/auth-service";
 
-export default function Home() {
+export default async function Home() {
+  await requireAuthenticatedPageUser();
+
   return (
     <main className="min-h-screen px-4 py-8 text-slate-100 sm:px-6 lg:px-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8">
