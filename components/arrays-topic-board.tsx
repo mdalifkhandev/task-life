@@ -9,32 +9,38 @@ export function ArraysTopicBoard() {
   const months = Array.from(new Set(arraysTasks.map((task) => task.month)));
 
   return (
-    <section className="space-y-5">
+    <section className="space-y-8">
       {error ? (
-        <article className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+        <article className="glass rounded-2xl border-rose-500/20 bg-rose-500/5 p-4 text-sm text-rose-200">
           Server error: {error}
         </article>
       ) : null}
-      <div className="grid gap-4 lg:grid-cols-[0.3fr_0.7fr]">
-        <aside className="space-y-4">
-          <article className="rounded-[1.6rem] border border-cyan-300/20 bg-cyan-300/10 p-5 backdrop-blur-xl">
-            <p className="text-sm text-slate-200">Arrays completion</p>
-            <p className="mt-2 text-3xl font-semibold text-white">
-              {getCompletionPercent(completedCount, arraysTasks.length)}%
-            </p>
-            <p className="mt-2 text-sm text-slate-300">
-              {isLoading
-                ? "Syncing arrays lane..."
-                : `${completedCount}/${arraysTasks.length} arrays tasks done`}
-            </p>
+      
+      <div className="grid gap-6 lg:grid-cols-[0.35fr_0.65fr]">
+        <aside className="space-y-6">
+          <article className="glass-shine relative overflow-hidden rounded-[2rem] border-indigo-500/20 bg-indigo-500/5 p-6 shadow-2xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400/70">Focus Topic</p>
+            <h2 className="mt-3 text-3xl font-bold text-white">Arrays Lane</h2>
+            <div className="mt-6 flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-indigo-500/10 text-2xl font-bold text-indigo-400">
+                {getCompletionPercent(completedCount, arraysTasks.length)}%
+              </div>
+              <div>
+                <p className="text-sm font-bold text-white">
+                  {completedCount} <span className="text-slate-500">/ {arraysTasks.length}</span>
+                </p>
+                <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">Tasks Completed</p>
+              </div>
+            </div>
           </article>
-          <article className="rounded-[1.6rem] border border-white/10 bg-white/6 p-5 backdrop-blur-xl">
-            <p className="text-sm text-slate-300">Coverage months</p>
+          
+          <article className="glass rounded-[2rem] p-6 shadow-xl">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">Coverage</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {months.map((month) => (
                 <span
                   key={month}
-                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-cyan-100"
+                  className="rounded-full border border-white/5 bg-white/5 px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-indigo-300"
                 >
                   {month}
                 </span>
@@ -43,74 +49,75 @@ export function ArraysTopicBoard() {
           </article>
         </aside>
 
-        <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(8,47,73,0.72),rgba(15,23,42,0.9))] p-5 shadow-[0_30px_90px_rgba(8,47,73,0.25)] backdrop-blur-xl">
-          <h2 className="text-2xl font-semibold text-white">Striver Arrays Topic</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">
-            Arrays focus page-টা intentionally cleaner রাখা হয়েছে। এখানে শুধু arrays-related
-            tasks আছে, so practice streak maintain করা easier হবে.
-          </p>
-        </div>
+        <section className="glass flex flex-col justify-center rounded-[2rem] p-8 shadow-2xl relative overflow-hidden">
+          <div className="absolute -right-8 -top-8 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl" />
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold tracking-tight text-white">Striver Arrays Roadmap</h2>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-400">
+              The Arrays focus page is intentionally cleaner to help you maintain deep focus. 
+              Track your practice streak and master fundamental patterns with the Vesper experience.
+            </p>
+          </div>
+        </section>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-6">
         {months.map((month) => {
           const monthTasks = arraysTasks.filter((task) => task.month === month);
+          const monthPercent = getCompletionPercent(monthTasks.filter(t => t.done).length, monthTasks.length);
 
           return (
-            <section
-              key={month}
-              className="rounded-[1.7rem] border border-white/10 bg-white/6 p-4 shadow-[0_25px_80px_rgba(8,15,31,0.25)] backdrop-blur-xl"
-            >
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <h3 className="text-xl font-semibold text-white">{month}</h3>
-                <span className="rounded-full bg-cyan-300/15 px-3 py-1 text-xs text-cyan-100">
-                  {monthTasks.filter((task) => task.done).length}/{monthTasks.length} done
-                </span>
+            <section key={month} className="space-y-4">
+              <div className="flex items-center justify-between px-2">
+                <h3 className="text-xl font-bold text-white">{month}</h3>
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500">{monthPercent}% Complete</span>
+                  <div className="h-1.5 w-32 rounded-full bg-white/5">
+                    <div className="h-full rounded-full bg-indigo-500 transition-all duration-1000" style={{ width: `${monthPercent}%` }} />
+                  </div>
+                </div>
               </div>
-              <div className="mt-3 space-y-2">
+              
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
                 {monthTasks.map((task) => (
                   <article
                     key={task.id}
-                    className="rounded-[1.3rem] border border-white/10 bg-slate-950/35 p-3"
+                    className="glass group relative overflow-hidden rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.05]"
                   >
-                    <div className="flex flex-wrap items-start gap-3">
+                    <div className="flex items-start gap-4">
                       <button
                         type="button"
                         onClick={() => toggleTask(task.id)}
-                        className={`mt-0.5 h-5 w-5 rounded-full border text-[10px] transition ${
+                        className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 transition-all ${
                           task.done
-                            ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                            : "border-white/20 bg-transparent text-transparent"
+                            ? "border-emerald-500 bg-emerald-500 text-white"
+                            : "border-white/10 bg-white/5 text-transparent hover:border-white/30"
                         }`}
-                        aria-label={`Mark ${task.title} as done`}
                       >
-                        ✓
+                        <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
                       </button>
-                      <div className="min-w-0 flex-1 space-y-1.5">
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-slate-300">
+                      
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <span className="rounded-full bg-white/5 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-slate-400 border border-white/5">
                             {task.label}
                           </span>
-                          <span className="rounded-full bg-cyan-300/15 px-2.5 py-1 text-[11px] text-cyan-100">
+                          <span className="rounded-full bg-indigo-500/10 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-indigo-400 border border-indigo-500/20">
                             {task.week}
                           </span>
                         </div>
-                        <h4
-                          className={`text-base font-medium text-white ${
-                            task.done ? "line-through opacity-60" : ""
-                          }`}
-                        >
+                        
+                        <h4 className={`text-base font-bold text-white transition-all ${task.done ? "opacity-30 line-through" : ""}`}>
                           {task.topic}
                         </h4>
-                        <div className="space-y-1 text-sm leading-5 text-slate-300">
-                          {task.details.slice(0, 2).map((detail) => (
-                            <p key={`${task.id}-${detail}`}>{detail}</p>
+                        
+                        <div className="mt-3 space-y-1.5">
+                          {task.details.slice(0, 2).map((detail, i) => (
+                            <div key={i} className="flex gap-2 text-sm leading-relaxed text-slate-400">
+                              <span className="text-slate-600">•</span>
+                              <p>{detail}</p>
+                            </div>
                           ))}
-                          {task.details.length > 2 ? (
-                            <p className="text-xs uppercase tracking-[0.16em] text-slate-500">
-                              +{task.details.length - 2} more lines
-                            </p>
-                          ) : null}
                         </div>
                       </div>
                     </div>

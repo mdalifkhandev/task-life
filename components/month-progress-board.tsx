@@ -11,80 +11,92 @@ export function MonthProgressBoard() {
   const laggingMonth = sortedMonths.at(-1);
 
   return (
-    <section className="space-y-5">
+    <section className="space-y-8">
       {error ? (
-        <article className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+        <article className="glass rounded-2xl border-rose-500/20 bg-rose-500/5 p-4 text-sm text-rose-200">
           Server error: {error}
         </article>
       ) : null}
-      <div className="grid gap-4 lg:grid-cols-[0.4fr_0.6fr]">
+      
+      <div className="grid gap-6 lg:grid-cols-[0.4fr_0.6fr]">
         <div className="grid gap-4">
-          <article className="rounded-[1.7rem] border border-emerald-300/20 bg-emerald-300/10 p-5 backdrop-blur-xl">
-            <p className="text-sm text-slate-200">Fastest month</p>
-            <h2 className="mt-2 text-2xl font-semibold text-white">{fastestMonth?.title}</h2>
-            <p className="mt-2 text-sm text-slate-300">
-              {isLoading
-                ? "Syncing progress from server..."
-                : `${fastestMonth?.completed}/${fastestMonth?.total} done • ${getCompletionPercent(
-                    fastestMonth?.completed ?? 0,
-                    fastestMonth?.total ?? 0
-                  )}% complete`}
-            </p>
+          <article className="glass-shine relative overflow-hidden rounded-[2rem] border-emerald-500/20 bg-emerald-500/5 p-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-400/70">Top Momentum</p>
+            <h2 className="mt-3 text-2xl font-bold text-white">{fastestMonth?.title}</h2>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 font-bold">
+                {getCompletionPercent(fastestMonth?.completed ?? 0, fastestMonth?.total ?? 1)}%
+              </div>
+              <p className="text-sm text-slate-400">
+                {isLoading ? "Syncing..." : `${fastestMonth?.completed}/${fastestMonth?.total} completed`}
+              </p>
+            </div>
           </article>
-          <article className="rounded-[1.7rem] border border-amber-300/20 bg-amber-300/10 p-5 backdrop-blur-xl">
-            <p className="text-sm text-slate-200">Needs attention</p>
-            <h2 className="mt-2 text-2xl font-semibold text-white">{laggingMonth?.title}</h2>
-            <p className="mt-2 text-sm text-slate-300">
-              {laggingMonth?.completed}/{laggingMonth?.total} done • {getCompletionPercent(
-                laggingMonth?.completed ?? 0,
-                laggingMonth?.total ?? 0
-              )}% complete
-            </p>
+          
+          <article className="glass-shine relative overflow-hidden rounded-[2rem] border-violet-500/20 bg-violet-500/5 p-6">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-violet-400/70">Needs Focus</p>
+            <h2 className="mt-3 text-2xl font-bold text-white">{laggingMonth?.title}</h2>
+            <div className="mt-4 flex items-center gap-3">
+              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 font-bold">
+                {getCompletionPercent(laggingMonth?.completed ?? 0, laggingMonth?.total ?? 1)}%
+              </div>
+              <p className="text-sm text-slate-400">
+                {laggingMonth?.completed}/{laggingMonth?.total} completed
+              </p>
+            </div>
           </article>
         </div>
 
-        <section className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(6,78,59,0.72),rgba(15,23,42,0.88))] p-5 shadow-[0_30px_90px_rgba(6,78,59,0.25)] backdrop-blur-xl">
-          <h2 className="text-2xl font-semibold text-white">
-            Track which month is moving fast and which one is lagging.
-          </h2>
-          <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
-            এটা এখন শুধু progress bar list না। ranking sense-ও দিচ্ছে, যাতে তুমি
-            immediately বুঝতে পারো কোন month-এ momentum strong আর কোন month-এ
-            catch-up দরকার.
-          </p>
+        <section className="glass flex flex-col justify-center rounded-[2rem] p-8 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-8 opacity-10">
+            <svg className="h-32 w-32" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>
+          </div>
+          <div className="relative z-10">
+            <h2 className="text-3xl font-bold tracking-tight text-white">
+              Roadmap Analytics
+            </h2>
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-slate-400">
+              Track which month is moving fast and which one is lagging. 
+              The Vesper dashboard provides ranking sense to help you identify 
+              where momentum is strong and where catch-up is needed.
+            </p>
+          </div>
         </section>
       </div>
 
-      <div className="space-y-3">
+      <div className="grid gap-4">
         {groupedPlan.map((month, index) => {
           const percent = getCompletionPercent(month.completed, month.total);
 
           return (
             <article
               key={month.key}
-              className="rounded-[1.7rem] border border-white/10 bg-white/6 p-4 shadow-[0_25px_80px_rgba(8,15,31,0.25)] backdrop-blur-xl"
+              className="glass group relative overflow-hidden rounded-[1.5rem] p-6 transition-all duration-300 hover:bg-white/[0.05]"
             >
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center gap-4">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-sm font-semibold text-slate-200">
+              <div className="flex flex-wrap items-center justify-between gap-6">
+                <div className="flex items-center gap-6">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-sm font-bold text-slate-400 transition-colors group-hover:bg-indigo-500 group-hover:text-white">
                     #{index + 1}
                   </span>
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{month.title}</h3>
-                    <p className="mt-1 text-sm text-slate-400">
-                      {month.completed}/{month.total} roadmap entries done
+                    <h3 className="text-xl font-bold text-white group-hover:translate-x-1 transition-transform">{month.title}</h3>
+                    <p className="mt-1 text-sm text-slate-500">
+                      {month.completed} / {month.total} roadmap entries completed
                     </p>
                   </div>
                 </div>
-                <span className="rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-amber-100">
-                  {percent}% complete
-                </span>
-              </div>
-              <div className="mt-4 h-3 rounded-full bg-white/10">
-                <div
-                  className="h-full rounded-full bg-linear-to-r from-amber-300 via-cyan-300 to-emerald-300"
-                  style={{ width: `${percent}%` }}
-                />
+                <div className="flex items-center gap-8">
+                  <div className="text-right">
+                    <p className="text-lg font-bold text-white">{percent}%</p>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-600">Completion</p>
+                  </div>
+                  <div className="h-14 w-1.5 rounded-full bg-white/5 overflow-hidden">
+                    <div 
+                      className="w-full bg-gradient-to-b from-violet-500 via-indigo-500 to-emerald-500 transition-all duration-1000" 
+                      style={{ height: `${percent}%` }} 
+                    />
+                  </div>
+                </div>
               </div>
             </article>
           );

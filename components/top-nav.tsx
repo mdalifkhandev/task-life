@@ -5,9 +5,9 @@ import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Task List", tone: "amber" },
-  { href: "/arrays", label: "Arrays Focus", tone: "cyan" },
-  { href: "/progress", label: "Month Progress", tone: "emerald" }
+  { href: "/", label: "Task List" },
+  { href: "/arrays", label: "Arrays Focus" },
+  { href: "/progress", label: "Month Progress" }
 ] as const;
 
 type TopNavProps = {
@@ -29,11 +29,8 @@ export function TopNav({ user }: TopNavProps) {
 
   const handleLogout = async () => {
     setIsLoggingOut(true);
-
     try {
-      await fetch("/api/auth/logout", {
-        method: "POST"
-      });
+      await fetch("/api/auth/logout", { method: "POST" });
       router.push("/login");
       router.refresh();
     } finally {
@@ -42,48 +39,58 @@ export function TopNav({ user }: TopNavProps) {
   };
 
   return (
-    <header className="mb-6 rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.92),rgba(30,41,59,0.82))] p-4 shadow-[0_25px_80px_rgba(2,6,23,0.4)] backdrop-blur-xl">
-      <div className="flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Task Life</p>
-          <h1 className="mt-2 text-xl font-semibold text-white">Global Task Workspace</h1>
+    <header className="sticky top-6 z-50 mx-auto w-full max-w-5xl px-4 sm:px-0">
+      <div className="glass flex items-center justify-between gap-4 rounded-[2rem] px-6 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-3xl">
+        <div className="flex items-center gap-4">
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-linear-to-br from-indigo-500 to-violet-600 font-bold text-white shadow-[0_0_20px_rgba(99,102,241,0.3)]">
+            T
+          </div>
+          <div className="hidden md:block">
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400/80">Premium</p>
+            <h1 className="text-sm font-bold tracking-tight text-white">Task Life</h1>
+          </div>
         </div>
-        <div className="flex flex-wrap items-center gap-3">
-          <nav className="flex flex-wrap items-center gap-3">
-            {links.map((link) => {
-              const isActive = pathname === link.href;
 
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`rounded-full border px-4 py-2 text-sm transition ${
-                    isActive
-                      ? "border-white/15 bg-white/12 text-white"
-                      : "border-white/10 bg-white/5 text-slate-200 hover:bg-white/10"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-          </nav>
+        <nav className="flex items-center gap-1 rounded-2xl bg-slate-950/40 p-1 border border-white/5">
+          {links.map((link) => {
+            const isActive = pathname === link.href;
 
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`relative rounded-xl px-4 py-2 text-xs font-semibold transition-all duration-300 ${
+                  isActive
+                    ? "text-white"
+                    : "text-slate-400 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                {isActive && (
+                  <div className="absolute inset-0 rounded-xl bg-white/10 shadow-[0_0_15px_rgba(255,255,255,0.05)]" />
+                )}
+                <span className="relative z-10">{link.label}</span>
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="flex items-center gap-4">
           {user ? (
-            <>
-              <div className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-right">
-                <p className="text-sm font-medium text-white">{user.name}</p>
-                <p className="text-xs text-slate-400">{user.email}</p>
+            <div className="flex items-center gap-3">
+              <div className="hidden text-right lg:block">
+                <p className="text-xs font-bold text-white">{user.name}</p>
+                <p className="text-[10px] font-medium text-slate-500">{user.email}</p>
               </div>
               <button
                 type="button"
                 onClick={() => void handleLogout()}
                 disabled={isLoggingOut}
-                className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-slate-200 transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-45"
+                className="shimmer-button flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-300 transition hover:bg-indigo-500/20 hover:text-white"
+                title="Logout"
               >
-                {isLoggingOut ? "Signing out..." : "Logout"}
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
               </button>
-            </>
+            </div>
           ) : null}
         </div>
       </div>

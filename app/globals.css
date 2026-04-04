@@ -2,8 +2,10 @@
 
 :root {
   color-scheme: dark;
-  --background: #09111f;
+  --background: #030712;
   --foreground: #f8fafc;
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -18,10 +20,74 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at top, rgba(245, 158, 11, 0.12), transparent 24%),
-    linear-gradient(180deg, #0f172a 0%, #111827 55%, #0b1120 100%);
+    radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-heading), sans-serif;
+  overflow-x: hidden;
+}
+
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.shimmer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 2.5s infinite;
+}
+
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.glass-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-shine::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.glass-shine:hover::after {
+  left: 100%;
+  top: 100%;
 }
 
 @keyframes auth-rise {
@@ -29,7 +95,6 @@ body {
     opacity: 0;
     transform: translateY(28px) scale(0.98);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -37,27 +102,13 @@ body {
 }
 
 @keyframes auth-float {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    transform: translate3d(0, -14px, 0);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
 }
 
 @keyframes auth-pulse {
-  0%,
-  100% {
-    opacity: 0.35;
-    transform: scale(0.94);
-  }
-
-  50% {
-    opacity: 0.72;
-    transform: scale(1.04);
-  }
+  0%, 100% { opacity: 0.35; transform: scale(0.94); }
+  50% { opacity: 0.72; transform: scale(1.04); }
 }
 
 .animate-auth-rise {
@@ -84,7 +135,7 @@ select {
 }
 
 ::selection {
-  background: rgba(245, 158, 11, 0.3);
+  background: rgba(99, 102, 241, 0.3);
   color: white;
 }
 
@@ -92,7 +143,6 @@ select {
   html {
     scroll-behavior: auto;
   }
-
   .animate-auth-rise,
   .animate-auth-rise-delayed,
   .animate-auth-float,

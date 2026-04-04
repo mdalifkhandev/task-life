@@ -190,198 +190,197 @@ export function TaskListBoard() {
   };
 
   return (
-    <section className="grid gap-5 xl:grid-cols-[0.34fr_0.66fr]">
-      <aside className="space-y-6 xl:sticky xl:top-6 xl:self-start">
+    <section className="grid gap-8 xl:grid-cols-[0.35fr_0.65fr]">
+      <aside className="space-y-6 xl:sticky xl:top-28 xl:self-start">
         {error ? (
-          <section className="rounded-[1.4rem] border border-rose-300/20 bg-rose-300/10 p-4 text-sm text-rose-100 backdrop-blur-xl">
+          <section className="glass rounded-2xl border-rose-500/20 bg-rose-500/5 p-4 text-sm text-rose-200">
             Server error: {error}
           </section>
         ) : null}
-        <section className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.92),rgba(30,41,59,0.82))] p-6 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl">
-          <div className="space-y-5">
+        
+        <section className="glass rounded-[2rem] p-6 shadow-2xl">
+          <div className="space-y-4">
             <span
               style={{ fontFamily: "var(--font-mono)" }}
-              className="inline-flex rounded-full border border-amber-300/25 bg-amber-200/10 px-4 py-1 text-[11px] uppercase tracking-[0.35em] text-amber-100"
+              className="inline-flex rounded-full border border-indigo-500/30 bg-indigo-500/10 px-4 py-1 text-[10px] font-semibold uppercase tracking-[0.35em] text-indigo-300"
             >
               Command Deck
             </span>
             <div>
-              <h2 className="max-w-md text-3xl font-semibold tracking-tight text-white">
-                Better UX, faster edits, and a cleaner task flow.
+              <h2 className="text-2xl font-bold tracking-tight text-white">
+                Task Management
               </h2>
-              <p className="mt-3 text-sm leading-7 text-slate-300">
-                Insert new tasks, edit existing ones, and manage the full roadmap
-                from a single control panel.
+              <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                Insert new tasks, edit existing ones, and manage the full roadmap from a single control panel.
               </p>
             </div>
           </div>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
-            <article className="rounded-3xl border border-emerald-300/15 bg-emerald-300/8 p-4">
-              <p className="text-sm text-slate-300">Day Progress</p>
-              <p className="mt-2 text-3xl font-semibold text-white">
-                {completedDays}/{totalDays}
+            <article className="glass-shine relative overflow-hidden rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5">
+              <p className="text-xs font-medium uppercase tracking-wider text-emerald-400/80">Day Progress</p>
+              <p className="mt-2 text-4xl font-bold text-white">
+                {completedDays}<span className="text-xl text-slate-500">/{totalDays}</span>
               </p>
-              <p className="mt-2 text-sm text-slate-300">
-                {isLoading
-                  ? "Syncing from server..."
-                  : `${getCompletionPercent(completedDays, totalDays)}% day completion`}
-              </p>
+              <div className="mt-4 h-1.5 w-full rounded-full bg-white/5">
+                <div 
+                  className="h-full rounded-full bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.4)] transition-all duration-500"
+                  style={{ width: `${getCompletionPercent(completedDays, totalDays)}%` }}
+                />
+              </div>
             </article>
-            <article className="rounded-3xl border border-cyan-300/15 bg-cyan-300/8 p-4">
-              <p className="text-sm text-slate-300">Months Open</p>
-              <p className="mt-2 text-3xl font-semibold text-white">{groupedPlan.length}</p>
-              <p className="mt-2 text-sm text-slate-300">
-                Roadmap split across structured month buckets.
-              </p>
+            <article className="glass-shine relative overflow-hidden rounded-2xl border border-indigo-500/20 bg-indigo-500/5 p-5">
+              <p className="text-xs font-medium uppercase tracking-wider text-indigo-400/80">Active Roadmap</p>
+              <p className="mt-2 text-4xl font-bold text-white">{groupedPlan.length}<span className="text-xl text-slate-500"> Months</span></p>
+              <p className="mt-2 text-xs text-slate-400">Roadmap split across structured buckets.</p>
             </article>
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/45 p-5 shadow-[0_25px_80px_rgba(8,15,31,0.35)] backdrop-blur-xl">
+        <section className="glass rounded-[2rem] p-6 shadow-2xl">
           <div className="space-y-4">
             <p
               style={{ fontFamily: "var(--font-mono)" }}
-              className="text-xs uppercase tracking-[0.35em] text-amber-100/80"
+              className="text-[10px] font-semibold uppercase tracking-[0.35em] text-violet-400"
             >
-              Insert Task
+              Quick Action
             </p>
-            <h3 className="text-2xl font-semibold text-white">
-              Drop a new task into any week and auto-renumber the roadmap.
-            </h3>
+            <h3 className="text-xl font-bold text-white">Insert Task</h3>
           </div>
 
-          <div className="mt-5 space-y-3 rounded-3xl border border-white/10 bg-white/5 p-4">
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Month</span>
-              <select
-                value={activeMonth?.key ?? ""}
-                onChange={(event) => handleMonthChange(event.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
-              >
-                {groupedPlan.map((month) => (
-                  <option key={month.key} value={month.key} className="bg-slate-950">
-                    {month.title}
-                  </option>
-                ))}
-              </select>
-            </label>
+          <div className="mt-6 space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              <label className="block space-y-1.5">
+                <span className="text-[10px] font-medium uppercase text-slate-500">Month</span>
+                <select
+                  value={activeMonth?.key ?? ""}
+                  onChange={(event) => handleMonthChange(event.target.value)}
+                  className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-white outline-none transition focus:border-indigo-500/50 focus:bg-white/[0.05]"
+                >
+                  {groupedPlan.map((month) => (
+                    <option key={month.key} value={month.key} className="bg-slate-950">
+                      {month.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Week</span>
-              <select
-                value={activeWeek?.key ?? ""}
-                onChange={(event) => handleWeekChange(event.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
-              >
-                {(activeMonth?.weeks ?? []).map((week) => (
-                  <option key={week.key} value={week.key} className="bg-slate-950">
-                    {week.title}
-                  </option>
-                ))}
-              </select>
-            </label>
+              <label className="block space-y-1.5">
+                <span className="text-[10px] font-medium uppercase text-slate-500">Week</span>
+                <select
+                  value={activeWeek?.key ?? ""}
+                  onChange={(event) => handleWeekChange(event.target.value)}
+                  className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-white outline-none transition focus:border-indigo-500/50 focus:bg-white/[0.05]"
+                >
+                  {(activeMonth?.weeks ?? []).map((week) => (
+                    <option key={week.key} value={week.key} className="bg-slate-950">
+                      {week.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
 
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Insert before day</span>
+            <label className="block space-y-1.5">
+              <span className="text-[10px] font-medium uppercase text-slate-500">Insert Position</span>
               <select
                 value={safeInsertBeforeTaskId}
                 onChange={(event) => setInsertBeforeTaskId(event.target.value)}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
+                className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-3 py-2 text-sm text-white outline-none transition focus:border-indigo-500/50 focus:bg-white/[0.05]"
               >
                 {insertableDays.map((task) => (
                   <option key={task.id} value={task.id} className="bg-slate-950">
-                    {task.label} - {task.topic}
+                    Before {task.label}: {task.topic}
                   </option>
                 ))}
                 <option value={INSERT_AT_END} className="bg-slate-950">
-                  After last day in this week
+                  After last day in week
                 </option>
               </select>
             </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Task title</span>
+            <label className="block space-y-1.5">
+              <span className="text-[10px] font-medium uppercase text-slate-500">Task Title</span>
               <input
                 value={newTaskTitle}
                 onChange={(event) => setNewTaskTitle(event.target.value)}
-                placeholder="Example: Practice sliding window"
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
+                placeholder="Practice sliding window..."
+                className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-4 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500/50 focus:bg-white/[0.05]"
               />
             </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Task notes</span>
+            <label className="block space-y-1.5">
+              <span className="text-[10px] font-medium uppercase text-slate-500">Notes</span>
               <textarea
                 value={newTaskNotes}
                 onChange={(event) => setNewTaskNotes(event.target.value)}
-                placeholder="Short details for the inserted task"
-                rows={4}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
+                placeholder="Optional details..."
+                rows={3}
+                className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-4 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-indigo-500/50 focus:bg-white/[0.05]"
               />
             </label>
 
             <button
               type="button"
               onClick={handleInsert}
-              className="w-full rounded-full bg-amber-300 px-5 py-3 font-medium text-slate-950 transition hover:bg-amber-200"
+              className="w-full rounded-xl bg-indigo-500 py-3 text-sm font-bold text-white shadow-lg shadow-indigo-500/25 transition-all hover:bg-indigo-400 hover:shadow-indigo-500/40 active:scale-[0.98]"
             >
-              Insert task and renumber
+              Insert Task
             </button>
           </div>
         </section>
 
-        <section className="rounded-[2rem] border border-white/10 bg-slate-950/45 p-5 shadow-[0_25px_80px_rgba(8,15,31,0.35)] backdrop-blur-xl">
+        <section className={`glass rounded-[2rem] p-6 shadow-2xl transition-all duration-500 ${editingTask ? 'ring-2 ring-violet-500/30' : ''}`}>
           <div className="space-y-4">
             <p
               style={{ fontFamily: "var(--font-mono)" }}
-              className="text-xs uppercase tracking-[0.35em] text-cyan-100/80"
+              className="text-[10px] font-semibold uppercase tracking-[0.35em] text-emerald-400"
             >
-              Edit Task
+              Edit Flow
             </p>
-            <h3 className="text-2xl font-semibold text-white">
-              {editingTask ? `Editing ${editingTask.label}` : "Pick any day card and press Edit."}
+            <h3 className="text-xl font-bold text-white">
+              {editingTask ? `Modify ${editingTask.label}` : "Editor Panel"}
             </h3>
           </div>
 
-          <div className="mt-5 space-y-3 rounded-3xl border border-white/10 bg-white/5 p-4">
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Task title</span>
+          <div className="mt-6 space-y-4">
+            <label className="block space-y-1.5">
+              <span className="text-[10px] font-medium uppercase text-slate-500">Task Title</span>
               <input
                 value={editTitle}
                 onChange={(event) => setEditTitle(event.target.value)}
-                placeholder="Select a day task to edit"
+                placeholder="Select a task to edit"
                 disabled={!editingTask}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition disabled:cursor-not-allowed disabled:opacity-45 focus:border-cyan-300/60"
+                className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-4 py-2.5 text-sm text-white outline-none transition disabled:opacity-30 focus:border-emerald-500/50 focus:bg-white/[0.05]"
               />
             </label>
 
-            <label className="block space-y-2">
-              <span className="text-sm text-slate-300">Task details</span>
+            <label className="block space-y-1.5">
+              <span className="text-[10px] font-medium uppercase text-slate-500">Details</span>
               <textarea
                 value={editDetails}
                 onChange={(event) => setEditDetails(event.target.value)}
                 placeholder="Task details appear here"
-                rows={5}
+                rows={4}
                 disabled={!editingTask}
-                className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition disabled:cursor-not-allowed disabled:opacity-45 focus:border-cyan-300/60"
+                className="w-full rounded-xl border border-white/5 bg-white/[0.02] px-4 py-2.5 text-sm text-white outline-none transition disabled:opacity-30 focus:border-emerald-500/50 focus:bg-white/[0.05]"
               />
             </label>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex gap-3">
               <button
                 type="button"
                 onClick={handleSaveEdit}
                 disabled={!editingTask}
-                className="rounded-full bg-cyan-300 px-5 py-3 font-medium text-slate-950 transition enabled:hover:bg-cyan-200 disabled:cursor-not-allowed disabled:bg-white/10 disabled:text-slate-400"
+                className="flex-1 rounded-xl bg-emerald-500 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition-all enabled:hover:bg-emerald-400 disabled:opacity-30"
               >
-                Save edit
+                Save
               </button>
               <button
                 type="button"
                 onClick={handleCancelEdit}
                 disabled={!editingTask}
-                className="rounded-full border border-white/12 bg-white/5 px-5 py-3 font-medium text-white transition enabled:hover:bg-white/10 disabled:cursor-not-allowed disabled:opacity-45"
+                className="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-bold text-white transition-all enabled:hover:bg-white/10 disabled:opacity-30"
               >
                 Cancel
               </button>
@@ -390,214 +389,194 @@ export function TaskListBoard() {
         </section>
       </aside>
 
-      <div className="space-y-4">
-        <section className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.82),rgba(30,41,59,0.58))] p-4 shadow-[0_20px_60px_rgba(8,15,31,0.25)] backdrop-blur-xl">
+      <div className="space-y-6">
+        <section className="glass rounded-[1.5rem] p-4 shadow-xl">
           <div className="flex flex-wrap items-center gap-3">
-            <input
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search task, topic, or detail..."
-              className="min-w-60 flex-1 rounded-full border border-white/10 bg-slate-950/45 px-4 py-2.5 text-sm text-white outline-none transition focus:border-cyan-300/60"
-            />
-            {(["all", "pending", "done", "exam"] as const).map((item) => (
-              <button
-                key={item}
-                type="button"
-                onClick={() => setStatusFilter(item)}
-                className={`rounded-full px-4 py-2 text-sm transition ${
-                  statusFilter === item
-                    ? "bg-amber-300 text-slate-950"
-                    : "border border-white/10 bg-white/5 text-slate-200 hover:bg-white/10"
-                }`}
-              >
-                {item === "all"
-                  ? "All"
-                  : item === "pending"
-                    ? "Pending"
-                    : item === "done"
-                      ? "Done"
-                      : "Exams"}
-              </button>
-            ))}
+            <div className="relative flex-1">
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">
+                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+              </span>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder="Search anything..."
+                className="w-full rounded-full border border-white/5 bg-white/[0.02] py-2.5 pl-11 pr-4 text-sm text-white outline-none transition focus:border-indigo-500/50 focus:bg-white/[0.05]"
+              />
+            </div>
+            <div className="flex gap-1.5 rounded-full border border-white/5 bg-white/[0.02] p-1">
+              {(["all", "pending", "done", "exam"] as const).map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setStatusFilter(item)}
+                  className={`rounded-full px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider transition-all duration-300 ${
+                    statusFilter === item
+                      ? "bg-indigo-500 text-white shadow-lg shadow-indigo-500/30"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
-          <p className="mt-3 text-xs uppercase tracking-[0.28em] text-slate-400">
-            Compact View
-          </p>
         </section>
 
         {filteredMonths.length === 0 ? (
-          <section className="rounded-[2rem] border border-dashed border-white/10 bg-white/5 p-6 text-center text-slate-300 backdrop-blur-xl">
-            No tasks match your current search or filter.
+          <section className="glass flex h-64 flex-col items-center justify-center rounded-[2rem] border-dashed border-white/10 text-slate-400">
+            <p className="text-lg font-medium">No results found</p>
+            <p className="mt-1 text-sm text-slate-500 text-center px-6">Try adjusting your filters or search query.</p>
           </section>
         ) : null}
 
-        {filteredMonths.map((month) => {
-          const isMonthExpanded = expandedMonths.has(month.key);
-          const monthPercent = getCompletionPercent(month.completed, month.total);
+        <div className="space-y-8">
+          {filteredMonths.map((month) => {
+            const isMonthExpanded = expandedMonths.has(month.key);
+            const monthPercent = getCompletionPercent(month.completed, month.total);
 
-          return (
-            <article
-              key={month.key}
-              className="rounded-[1.75rem] border border-white/10 bg-white/6 p-4 shadow-[0_20px_50px_rgba(8,15,31,0.25)] backdrop-blur-xl"
-            >
-              <button
-                type="button"
-                onClick={() => toggleMonth(month.key)}
-                className="flex w-full flex-wrap items-center justify-between gap-4 rounded-[1.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(15,23,42,0.86),rgba(30,41,59,0.58))] px-4 py-3 text-left transition hover:border-amber-300/30 hover:bg-slate-950/45"
-              >
-                <div>
-                  <p
-                    style={{ fontFamily: "var(--font-mono)" }}
-                    className="text-[11px] uppercase tracking-[0.3em] text-amber-100/70"
-                  >
-                    Month Section
-                  </p>
-                  <h3 className="mt-1.5 text-xl font-semibold text-white">
-                    {month.title}
-                  </h3>
-                </div>
-                <div className="min-w-36 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-right">
-                  <p className="text-sm text-slate-300">
-                    {month.completed}/{month.total} done
-                  </p>
-                  <div className="mt-2 h-2 rounded-full bg-white/10">
-                    <div
-                      className="h-full rounded-full bg-linear-to-r from-amber-300 via-cyan-300 to-emerald-300"
-                      style={{ width: `${monthPercent}%` }}
-                    />
+            return (
+              <article key={month.key} className="group flex flex-col gap-4">
+                <button
+                  type="button"
+                  onClick={() => toggleMonth(month.key)}
+                  className="glass group/btn flex w-full flex-wrap items-center justify-between gap-4 rounded-[1.5rem] p-5 text-left transition-all hover:border-indigo-500/30 hover:bg-white/[0.05]"
+                >
+                  <div className="flex items-center gap-5">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-400 transition-colors group-hover/btn:bg-indigo-500 group-hover/btn:text-white">
+                      <span className="text-lg font-bold">{month.title.split(' ')[1]}</span>
+                    </div>
+                    <div>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-indigo-400/70">Month Roadmap</p>
+                      <h3 className="text-xl font-bold text-white group-hover/btn:translate-x-1 transition-transform">{month.title}</h3>
+                    </div>
                   </div>
-                </div>
-              </button>
+                  <div className="flex items-center gap-6">
+                    <div className="text-right">
+                      <p className="text-sm font-bold text-white">{month.completed} / {month.total}</p>
+                      <p className="text-[10px] font-medium uppercase text-slate-500">{monthPercent}% Done</p>
+                    </div>
+                    <div className="h-10 w-1 rounded-full bg-white/5 overflow-hidden">
+                      <div className="w-full bg-gradient-to-b from-violet-500 via-indigo-500 to-emerald-500 transition-all duration-700" style={{ height: `${monthPercent}%` }} />
+                    </div>
+                  </div>
+                </button>
 
-              {isMonthExpanded ? (
-                <div className="mt-3 space-y-2.5">
-                  {month.weeks.map((week) => {
-                    const isWeekExpanded = expandedWeeks.has(week.key);
-                    const weekPercent = getCompletionPercent(week.completed, week.total);
+                {isMonthExpanded && (
+                  <div className="grid gap-4 pl-4 sm:pl-8 border-l-2 border-white/5 ml-6">
+                    {month.weeks.map((week) => {
+                      const isWeekExpanded = expandedWeeks.has(week.key);
+                      const weekPercent = getCompletionPercent(week.completed, week.total);
 
-                    return (
-                      <section
-                        key={week.key}
-                        className="rounded-[1.4rem] border border-white/10 bg-slate-950/30 p-3"
-                      >
-                        <button
-                          type="button"
-                          onClick={() => toggleWeek(week.key)}
-                          className="flex w-full flex-wrap items-center justify-between gap-4 rounded-[1.1rem] border border-white/10 bg-white/5 px-3 py-2.5 text-left transition hover:border-cyan-300/30 hover:bg-white/8"
-                        >
-                          <div>
-                            <p
-                              style={{ fontFamily: "var(--font-mono)" }}
-                              className="text-[11px] uppercase tracking-[0.3em] text-cyan-100/70"
-                            >
-                              Week Section
-                            </p>
-                            <h4 className="mt-1.5 text-lg font-semibold text-white">
-                              {week.title}
-                            </h4>
-                          </div>
-                          <div className="rounded-xl border border-white/10 bg-slate-950/40 px-3 py-2 text-right">
-                            <p className="text-sm text-slate-300">
-                              {week.completed}/{week.total} done
-                            </p>
-                            <p className="text-xs text-slate-500">{weekPercent}% complete</p>
-                          </div>
-                        </button>
+                      return (
+                        <section key={week.key} className="space-y-4">
+                          <button
+                            type="button"
+                            onClick={() => toggleWeek(week.key)}
+                            className="glass group/week flex w-full items-center justify-between rounded-2xl bg-white/[0.02] px-4 py-3 text-left transition-all hover:bg-white/[0.04]"
+                          >
+                            <div className="flex items-center gap-3">
+                              <div className={`h-2 w-2 rounded-full ${weekPercent === 100 ? 'bg-emerald-500' : 'bg-indigo-500'}`} />
+                              <h4 className="text-sm font-bold text-slate-200 group-hover/week:text-white">{week.title}</h4>
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500">{weekPercent}% Complete</span>
+                          </button>
 
-                        {isWeekExpanded ? (
-                          <div className="mt-3 space-y-2">
-                            {week.tasks.map((task: GroupedTask) => (
-                              <article
-                                key={task.id}
-                                className={`rounded-[1.7rem] border p-4 transition ${
-                                  editingTaskId === task.id
-                                    ? "border-cyan-300/45 bg-cyan-300/8 shadow-[0_0_0_1px_rgba(103,232,249,0.12)]"
-                                    : "border-white/10 bg-white/5"
-                                }`}
-                              >
-                                <div className="flex flex-wrap items-start gap-3">
-                                  <button
-                                    type="button"
-                                    onClick={() => toggleTask(task.id)}
-                                    className={`mt-0.5 h-5 w-5 rounded-full border text-[10px] transition ${
-                                      task.done
-                                        ? "border-emerald-300 bg-emerald-300 text-slate-950"
-                                        : "border-white/20 bg-transparent text-transparent"
-                                    }`}
-                                    aria-label={`Mark ${task.title} as done`}
-                                  >
-                                    ✓
-                                  </button>
+                          {isWeekExpanded && (
+                            <div className="grid gap-3">
+                              {week.tasks.map((task: GroupedTask) => (
+                                <article
+                                  key={task.id}
+                                  className={`glass relative overflow-hidden rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl ${
+                                    editingTaskId === task.id ? "ring-2 ring-violet-500/50" : ""
+                                  }`}
+                                >
+                                  <div 
+                                    className={`absolute left-0 top-0 bottom-0 w-1 ${
+                                      task.done 
+                                        ? "bg-emerald-500" 
+                                        : task.kind === "exam" 
+                                          ? "bg-indigo-500" 
+                                          : "bg-violet-500"
+                                    }`} 
+                                  />
+                                  
+                                  <div className="flex items-start gap-4">
+                                    <button
+                                      type="button"
+                                      onClick={() => toggleTask(task.id)}
+                                      className={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border-2 transition-all ${
+                                        task.done
+                                          ? "border-emerald-500 bg-emerald-500 text-white"
+                                          : "border-white/10 bg-white/5 text-transparent hover:border-white/30"
+                                      }`}
+                                    >
+                                      <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                    </button>
 
-                                  <div className="min-w-0 flex-1 space-y-2">
-                                    <div className="flex flex-wrap items-center gap-2">
-                                      <span
-                                        style={{ fontFamily: "var(--font-mono)" }}
-                                        className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.24em] text-slate-300"
-                                      >
-                                        {task.label}
-                                      </span>
-                                      <span
-                                        className={`rounded-full px-2.5 py-1 text-[11px] ${
-                                          task.done
-                                            ? "bg-emerald-300/15 text-emerald-100"
-                                            : "bg-cyan-300/15 text-cyan-100"
-                                        }`}
-                                      >
-                                        {task.done
-                                          ? "Done"
-                                          : task.kind === "exam"
-                                            ? "Exam"
-                                            : "Pending"}
-                                      </span>
-                                      {task.kind === "day" ? (
-                                        <button
-                                          type="button"
-                                          onClick={() => startEditing(task)}
-                                          className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-slate-200 transition hover:bg-white/10"
-                                        >
-                                          Edit
-                                        </button>
-                                      ) : null}
-                                    </div>
+                                    <div className="min-w-0 flex-1 space-y-3">
+                                      <div className="flex flex-wrap items-center justify-between gap-2">
+                                        <div className="flex gap-2">
+                                          <span className="rounded-full bg-white/5 px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest text-slate-400 border border-white/5">
+                                            {task.label}
+                                          </span>
+                                          <span className={`rounded-full px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest border ${
+                                            task.done 
+                                              ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20" 
+                                              : task.kind === "exam"
+                                                ? "bg-indigo-500/10 text-indigo-400 border-indigo-500/20"
+                                                : "bg-violet-500/10 text-violet-400 border-violet-500/20"
+                                          }`}>
+                                            {task.done ? "Completed" : task.kind === "exam" ? "Exam" : "Pending"}
+                                          </span>
+                                        </div>
+                                        {task.kind === "day" && (
+                                          <button
+                                            type="button"
+                                            onClick={() => startEditing(task)}
+                                            className="text-[10px] font-bold uppercase tracking-wider text-slate-500 hover:text-white transition-colors"
+                                          >
+                                            Edit
+                                          </button>
+                                        )}
+                                      </div>
 
-                                    <div>
-                                      <h5
-                                        className={`text-base font-medium text-white ${
-                                          task.done ? "line-through opacity-60" : ""
-                                        }`}
-                                      >
-                                        {task.topic}
-                                      </h5>
-                                      <p className="mt-1 text-xs text-slate-400">
-                                        {task.month} • {task.week}
-                                      </p>
-                                    </div>
-
-                                    <div className="space-y-1 text-sm leading-5 text-slate-300">
-                                      {task.details.slice(0, 2).map((detail) => (
-                                        <p key={`${task.id}-${detail}`}>{detail}</p>
-                                      ))}
-                                      {task.details.length > 2 ? (
-                                        <p className="text-xs uppercase tracking-[0.18em] text-slate-500">
-                                          +{task.details.length - 2} more lines
+                                      <div>
+                                        <h5 className={`text-base font-bold text-white transition-all ${task.done ? "opacity-30 line-through" : ""}`}>
+                                          {task.topic}
+                                        </h5>
+                                        <p className="mt-1 text-[10px] font-medium uppercase tracking-wider text-slate-500">
+                                          {task.month} • {task.week}
                                         </p>
-                                      ) : null}
+                                      </div>
+
+                                      <div className="space-y-1.5">
+                                        {task.details.slice(0, 3).map((detail, i) => (
+                                          <div key={i} className="flex gap-2 text-sm leading-relaxed text-slate-400">
+                                            <span className="text-slate-600">•</span>
+                                            <p>{detail}</p>
+                                          </div>
+                                        ))}
+                                        {task.details.length > 3 && (
+                                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600 pl-4">
+                                            + {task.details.length - 3} more lines
+                                          </p>
+                                        )}
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </article>
-                            ))}
-                          </div>
-                        ) : null}
-                      </section>
-                    );
-                  })}
-                </div>
-              ) : null}
-            </article>
-          );
-        })}
+                                </article>
+                              ))}
+                            </div>
+                          )}
+                        </section>
+                      );
+                    })}
+                  </div>
+                )}
+              </article>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
