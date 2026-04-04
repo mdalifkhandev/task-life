@@ -64,8 +64,21 @@ export function AuthPanel() {
   };
 
   return (
-    <section className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
-      <article className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(120,53,15,0.24),rgba(15,23,42,0.92))] p-8 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl">
+    <section className="relative grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="animate-auth-float absolute -left-8 top-16 h-32 w-32 rounded-full bg-amber-300/10 blur-3xl" />
+        <div
+          className="animate-auth-pulse absolute right-0 top-10 h-40 w-40 rounded-full bg-cyan-300/10 blur-3xl"
+          style={{ animationDelay: "0.4s" }}
+        />
+        <div
+          className="animate-auth-float absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-emerald-300/10 blur-3xl"
+          style={{ animationDelay: "1.2s" }}
+        />
+      </div>
+
+      <article className="animate-auth-rise relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(120,53,15,0.22),rgba(15,23,42,0.92))] p-8 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl">
+        <div className="absolute inset-x-8 top-0 h-px bg-linear-to-r from-transparent via-amber-200/45 to-transparent" />
         <span
           style={{ fontFamily: "var(--font-mono)" }}
           className="inline-flex rounded-full border border-amber-300/25 bg-amber-200/10 px-4 py-1 text-xs uppercase tracking-[0.35em] text-amber-100"
@@ -73,31 +86,42 @@ export function AuthPanel() {
           Secure Access
         </span>
         <h1 className="mt-5 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-          Sign in to open your DSA workspace.
+          Sign in to open your task workspace.
         </h1>
         <p className="mt-5 max-w-xl text-base leading-7 text-slate-300">
-          Login system এখন MongoDB-backed. Account create করলে session cookie set
-          হবে, আর sign in ছাড়া workspace pages আর task APIs access করা যাবে না.
+          Task Life এখন শুধু DSA tracker না. এটা global task management
+          workspace. Personal planning, roadmap tracking, team-style flow, আর
+          quick edits সবকিছুর জন্য secure login system রাখা হয়েছে. Account
+          create করলে session cookie set হবে, তারপর login state দিয়েই workspace
+          access চলবে.
         </p>
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          <article className="rounded-3xl border border-white/10 bg-white/6 p-4">
-            <p className="text-sm text-slate-300">Protected Routes</p>
+          <article className="animate-auth-rise rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur-md">
+            <p className="text-sm text-slate-300">Private Workspace</p>
             <p className="mt-2 text-lg font-semibold text-white">
-              Home, Arrays, Progress
+              Tasks, progress, and focused work views stay protected.
             </p>
           </article>
-          <article className="rounded-3xl border border-white/10 bg-white/6 p-4">
-            <p className="text-sm text-slate-300">Session Type</p>
+          <article
+            className="animate-auth-rise rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur-md"
+            style={{ animationDelay: "0.08s" }}
+          >
+            <p className="text-sm text-slate-300">Session Security</p>
             <p className="mt-2 text-lg font-semibold text-white">HTTP-only Cookie</p>
           </article>
-          <article className="rounded-3xl border border-white/10 bg-white/6 p-4">
+          <article
+            className="animate-auth-rise rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur-md"
+            style={{ animationDelay: "0.16s" }}
+          >
             <p className="text-sm text-slate-300">Persistence</p>
             <p className="mt-2 text-lg font-semibold text-white">MongoDB Sessions</p>
           </article>
         </div>
       </article>
 
-      <article className="rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.92),rgba(30,41,59,0.82))] p-6 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-8">
+      <article className="animate-auth-rise-delayed relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(15,23,42,0.92),rgba(30,41,59,0.82))] p-6 shadow-[0_35px_100px_rgba(2,6,23,0.45)] backdrop-blur-xl sm:p-8">
+        <div className="absolute inset-x-10 top-0 h-px bg-linear-to-r from-transparent via-cyan-200/45 to-transparent" />
+        <div className="pointer-events-none absolute -right-10 top-14 h-24 w-24 rounded-full bg-cyan-300/10 blur-2xl" />
         <div className="flex rounded-full border border-white/10 bg-slate-950/45 p-1">
           {(["login", "register"] as const).map((item) => (
             <button
@@ -125,9 +149,15 @@ export function AuthPanel() {
             </h2>
             <p className="mt-2 text-sm leading-6 text-slate-300">
               {mode === "login"
-                ? "Use your email and password to access the workspace."
-                : "Register once, then your session will keep the workspace unlocked."}
+                ? "Use your email and password to access your task dashboard."
+                : "Create a new account to unlock your personal task workspace and secure session."}
             </p>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-300">
+            {mode === "login"
+              ? "Already registered? Sign in and continue where you left off."
+              : "New here? Register once, then you can log in anytime from any browser."}
           </div>
 
           {error ? (
@@ -144,7 +174,7 @@ export function AuthPanel() {
                 onChange={(event) =>
                   setFields((current) => ({ ...current, name: event.target.value }))
                 }
-                placeholder="Your name"
+                placeholder="Your full name"
                 className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
               />
             </label>
@@ -175,6 +205,25 @@ export function AuthPanel() {
               className="w-full rounded-2xl border border-white/10 bg-slate-950/45 px-4 py-3 text-white outline-none transition focus:border-amber-300/60"
             />
           </label>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                Login Flow
+              </p>
+              <p className="mt-2 text-sm text-slate-300">
+                Fast access for existing users with secure cookie sessions.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3">
+              <p className="text-xs uppercase tracking-[0.24em] text-slate-500">
+                Registration
+              </p>
+              <p className="mt-2 text-sm text-slate-300">
+                Create an account once, then continue managing tasks without setup friction.
+              </p>
+            </div>
+          </div>
 
           <button
             type="button"

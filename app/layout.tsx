@@ -17,7 +17,8 @@ const monoFont = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Task Life",
-  description: "A redesigned DSA task workspace with focused pages and better editing UX."
+  description:
+    "A secure global task workspace with MongoDB-backed sessions, focused views, and streamlined task management UX."
 };
 
 export default async function RootLayout({

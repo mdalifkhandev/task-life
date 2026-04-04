@@ -24,6 +24,58 @@ body {
   font-family: var(--font-heading), sans-serif;
 }
 
+@keyframes auth-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.98);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes auth-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -14px, 0);
+  }
+}
+
+@keyframes auth-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: scale(1.04);
+  }
+}
+
+.animate-auth-rise {
+  animation: auth-rise 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-auth-rise-delayed {
+  animation: auth-rise 0.82s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-auth-float {
+  animation: auth-float 8s ease-in-out infinite;
+}
+
+.animate-auth-pulse {
+  animation: auth-pulse 6.5s ease-in-out infinite;
+}
+
 button,
 input,
 textarea,
@@ -34,4 +86,17 @@ select {
 ::selection {
   background: rgba(245, 158, 11, 0.3);
   color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-auth-rise,
+  .animate-auth-rise-delayed,
+  .animate-auth-float,
+  .animate-auth-pulse {
+    animation: none !important;
+  }
 }

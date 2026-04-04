@@ -46,7 +46,7 @@ export function TopNav({ user }: TopNavProps) {
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-slate-400">Task Life</p>
-          <h1 className="mt-2 text-xl font-semibold text-white">DSA Roadmap Workspace</h1>
+          <h1 className="mt-2 text-xl font-semibold text-white">Global Task Workspace</h1>
         </div>
         <div className="flex flex-wrap items-center gap-3">
           <nav className="flex flex-wrap items-center gap-3">
