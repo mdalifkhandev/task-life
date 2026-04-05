@@ -1,5 +1,3 @@
-import { TopNav } from "@/components/top-nav";
-import { getCurrentUser } from "@/lib/server/auth-service";
 import type { Metadata } from "next";
 import { Space_Grotesk, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
@@ -16,25 +14,20 @@ const monoFont = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Task Life",
+  title: "Orbit Taskflow",
   description:
-    "A secure global task workspace with MongoDB-backed sessions, focused views, and streamlined task management UX."
+    "A premium task operating system with personal workspaces, accepted admin assignments, folders, and polished task rituals."
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const user = await getCurrentUser();
-
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${headingFont.variable} ${monoFont.variable}`}>
-        <div className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pt-6 sm:px-6 lg:px-10">
-          <TopNav user={user} />
-          {children}
-        </div>
+        {children}
       </body>
     </html>
   );

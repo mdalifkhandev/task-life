@@ -7,11 +7,14 @@ import {
 } from "@/lib/server/task-service";
 import { TaskBoardClient } from "@/components/task-board-client";
 
-export default async function Home() {
+export default async function TodayPage() {
   const user = await requireAuthenticatedPageUser();
-  const tasks = await readUserTasks(user.id, { source: "personal" });
+  const allTasks = await readUserTasks(user.id);
   const folders = await readUserFolders(user.id);
   const notifications = await readUserNotifications(user.id);
+  const todayTasks = allTasks.filter(
+    (task) => !task.done && task.source !== "dsa"
+  );
 
   return (
     <DashboardLayout
@@ -20,12 +23,17 @@ export default async function Home() {
       user={user}
     >
       <TaskBoardClient
-        boardHint="Personal workspace"
-        boardTitle="Build your own system, one intentional task at a time."
-        emptyStateDescription="Create a task, drop it into a folder, and shape your private operating system exactly how you want it."
-        emptyStateTitle="Your personal workspace is clear"
+        allowCreate={false}
+        boardHint={new Date().toLocaleDateString("en-US", {
+          day: "numeric",
+          month: "long",
+          year: "numeric"
+        })}
+        boardTitle="Today&apos;s focus lane keeps your active work visible."
+        emptyStateDescription="Nothing is currently active. Accept an assignment or create a personal task from My Desk."
+        emptyStateTitle="No active tasks for today"
         folders={folders}
-        initialTasks={tasks}
+        initialTasks={todayTasks}
       />
     </DashboardLayout>
   );

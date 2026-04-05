@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "seed:tasks": "node --env-file=.env scripts/seed-dsa-plan.mjs"
+    "seed:tasks": "node --env-file=.env scripts/seed-dsa-plan.mjs",
+    "user:role": "node --env-file=.env scripts/set-user-role.mjs",
+    "migrate:dsa-folder": "node --env-file=.env scripts/migrate-dsa-folder.mjs"
   },
   "dependencies": {
     "express": "^5.2.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^1.7.0",
     "mongodb": "^7.1.1",
     "mongoose": "^9.3.3",
     "next": "latest",

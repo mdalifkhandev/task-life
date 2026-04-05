@@ -10,8 +10,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-.env
-.env.local
 .env.development.local
 .env.test.local
 .env.production.local
@@ -20,3 +18,7 @@ pnpm-debug.log*
 Thumbs.db
 
 tsconfig.tsbuildinfo
+config.bat
+
+.env
+.env.local

@@ -1,8 +1,12 @@
+export type TaskSource = "assigned" | "dsa" | "personal";
+
 export type Task = {
+  source?: TaskSource;
   id: string;
   title: string;
   notes: string;
   done: boolean;
+  folderId?: string;
 };
 
 export type GroupedTask = Task & {

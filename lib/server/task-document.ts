@@ -2,10 +2,36 @@ import mongoose, { Schema, type InferSchemaType, type Model } from "mongoose";
 
 const taskDocumentSchema = new Schema(
   {
+    userId: {
+      index: true,
+      ref: "User",
+      required: true,
+      type: Schema.Types.ObjectId
+    },
+    folderId: {
+      index: true,
+      ref: "Folder",
+      type: Schema.Types.ObjectId
+    },
+    source: {
+      default: "personal",
+      enum: ["personal", "assigned", "dsa"],
+      index: true,
+      required: true,
+      type: String
+    },
+    proposalId: {
+      index: true,
+      type: String
+    },
+    assignedByUserId: {
+      index: true,
+      ref: "User",
+      type: Schema.Types.ObjectId
+    },
     taskId: {
       required: true,
-      type: String,
-      unique: true
+      type: String
     },
     title: {
       required: true,

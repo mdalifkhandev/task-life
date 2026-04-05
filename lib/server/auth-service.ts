@@ -15,6 +15,7 @@ export type AuthUser = {
   email: string;
   id: string;
   name: string;
+  role: "admin" | "user";
 };
 
 export class AuthConflictError extends Error {}
@@ -32,10 +33,12 @@ const serializeUser = (user: {
   _id: { toString(): string };
   email: string;
   name: string;
+  role?: "admin" | "user";
 }): AuthUser => ({
   email: user.email,
   id: user._id.toString(),
-  name: user.name
+  name: user.name,
+  role: user.role ?? "user"
 });
 
 async function hashPassword(password: string) {

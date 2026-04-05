@@ -7,11 +7,14 @@ import {
 } from "@/lib/server/task-service";
 import { TaskBoardClient } from "@/components/task-board-client";
 
-export default async function Home() {
+export default async function CompletedPage() {
   const user = await requireAuthenticatedPageUser();
-  const tasks = await readUserTasks(user.id, { source: "personal" });
+  const allTasks = await readUserTasks(user.id);
   const folders = await readUserFolders(user.id);
   const notifications = await readUserNotifications(user.id);
+  const completedTasks = allTasks.filter(
+    (task) => task.done && task.source !== "dsa"
+  );
 
   return (
     <DashboardLayout
@@ -20,12 +23,14 @@ export default async function Home() {
       user={user}
     >
       <TaskBoardClient
-        boardHint="Personal workspace"
-        boardTitle="Build your own system, one intentional task at a time."
-        emptyStateDescription="Create a task, drop it into a folder, and shape your private operating system exactly how you want it."
-        emptyStateTitle="Your personal workspace is clear"
+        allowCreate={false}
+        boardHint="Archive"
+        boardTitle="Completed work stays visible as proof, not clutter."
+        emptyStateDescription="Finish a task and it will appear here with the rest of your shipped work."
+        emptyStateTitle="Nothing completed yet"
         folders={folders}
-        initialTasks={tasks}
+        initialTasks={completedTasks}
+        isArchive
       />
     </DashboardLayout>
   );
