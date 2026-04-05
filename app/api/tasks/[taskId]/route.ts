@@ -1,37 +1,36 @@
-import { requireAuthenticatedApiUser } from "@/lib/server/auth-service";
-import { updateTaskSchema } from "@/lib/server/task-schemas";
-import { updateTaskInDatabase } from "@/lib/server/task-service";
-import { ZodError } from "zod";
-
-export const runtime = "nodejs";
+import { NextResponse } from "next/server";
+import { getCurrentUser } from "@/lib/server/auth-service";
+import { updateUserTask, deleteUserTask } from "@/lib/server/task-service";
 
 export async function PATCH(
-  request: Request,
-  context: { params: Promise<{ taskId: string }> }
+  req: Request,
+  { params }: { params: Promise<{ taskId: string }> }
 ) {
-  try {
-    await requireAuthenticatedApiUser();
-    const { taskId } = await context.params;
-    const payload = updateTaskSchema.parse(await request.json());
-    const tasks = await updateTaskInDatabase({
-      ...payload,
-      taskId
-    });
+  const user = await getCurrentUser();
+  if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-    return Response.json({ tasks });
-  } catch (error) {
-    if (error instanceof ZodError) {
-      return Response.json(
-        { error: "Invalid update payload", issues: error.flatten() },
-        { status: 400 }
-      );
-    }
+  const { taskId } = await params;
+  const body = await req.json();
 
-    const message =
-      error instanceof Error ? error.message : "Failed to update task";
-    return Response.json(
-      { error: message },
-      { status: message === "Unauthorized" ? 401 : 500 }
-    );
-  }
+  const task = await updateUserTask({
+    userId: user.id,
+    taskId,
+    ...body
+  });
+
+  if (!task) return NextResponse.json({ error: "Task not found" }, { status: 404 });
+  return NextResponse.json(task);
+}
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: Promise<{ taskId: string }> }
+) {
+  const user = await getCurrentUser();
+  if (!user) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const { taskId } = await params;
+  await deleteUserTask(user.id, taskId);
+
+  return NextResponse.json({ success: true });
 }

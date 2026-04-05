@@ -36,6 +36,9 @@ const userDocumentSchema = new Schema(
           type: String
         },
         notes: String,
+        senderEmail: String,
+        senderName: String,
+        senderUserId: String,
         status: {
           default: "pending",
           enum: ["pending", "accepted", "rejected"],
